@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <random>
+#include <numeric>
 using namespace std;
 
 bool leave = false;
@@ -14,8 +15,8 @@ string songLink;
 int main() {
     vector<string> songs = {"734", "Almost Easy", "Bat Country", "Blackened", "Carry On", 
                             "Cut the Bridge", "Empty Out Your Pockets", "Faint", "God Hates Us", 
-                            "Hail to the King", "House of the Rising Sun", "Injection", "Kill My Vibe", 
-                            "Lace It", "Motorbreath", "Nightmare", "One", "Pyschosocial", 
+                            "Hail to the King", "House of the Rising Sun", "Injection", 
+                            "Motorbreath", "Nightmare", "One", "Pyschosocial", 
                             "Survive", "Welcome to the Family"};
     
     vector<string> links = {"https://www.youtube.com/watch?v=WqKWP9j3w8E", "https://www.youtube.com/watch?v=lz3OrB9i2Y0", 
