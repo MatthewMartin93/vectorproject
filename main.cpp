@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <random>
 #include <numeric>
+
 using namespace std;
 
 bool leave = false;
@@ -18,7 +19,7 @@ int main() {
                             "Hail to the King", "House of the Rising Sun", "Injection", 
                             "Motorbreath", "Nightmare", "One", "Pyschosocial", 
                             "Survive", "Welcome to the Family"};
-    
+
     vector<string> links = {"https://www.youtube.com/watch?v=WqKWP9j3w8E", "https://www.youtube.com/watch?v=lz3OrB9i2Y0", 
                             "https://www.youtube.com/watch?v=NJ2regeDoJw", "https://www.youtube.com/watch?v=nUZVXtDVrc0", 
                             "https://www.youtube.com/watch?v=rXNlFiMaPMA", "https://www.youtube.com/watch?v=_f9b0NB5o4E", 
@@ -58,6 +59,13 @@ int main() {
                 break;
             case 3:
                 cout << "Playing playlist..." << endl;
+                for (size_t i = 0; i < songs.size(); ++i) {
+                    cout << "Now playing: " << songs[i] << endl;
+                    const char* url = links[i].c_str();
+                    ShellExecute(0, "open", url, 0, 0, SW_SHOWNORMAL);
+                    cout << "Press Enter to continue to the next song..." << endl;
+                    cin.ignore();
+                }
                 break;
             case 4:
                 {
@@ -74,13 +82,22 @@ int main() {
                         shuffledSongs[i] = songs[indices[i]];
                         shuffledLinks[i] = links[indices[i]];
                     }
+
+                    cout << "Playing shuffled playlist..." << endl;
+                    for (size_t i = 0; i < shuffledSongs.size(); ++i) {
+                        cout << "Now playing: " << shuffledSongs[i] << endl;
+                        const char* url = shuffledLinks[i].c_str();
+                        ShellExecute(0, "open", url, 0, 0, SW_SHOWNORMAL);
+                        cout << "Press Enter to continue to the next song..." << endl;
+                        cin.ignore();
+                    }
                 }
                 break;
             case 5:
                 leave = true;
                 break;
             default:
-                cout << "Invalid choice!" << endl;
+                cout << "Invalid choice. Please try again." << endl;
                 break;
         }
     } while (!leave);
