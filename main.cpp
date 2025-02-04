@@ -1,3 +1,7 @@
+//Matthew Martin
+//Playlist simulator
+//2/4/2025
+//Extra: Opens youtube link of song
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -97,7 +101,7 @@ int main() {
                 leave = true;
                 break;
             default:
-                cout << "Invalid choice. Please try again." << endl;
+                cout << "error trap" << endl;
                 break;
         }
     } while (!leave);
