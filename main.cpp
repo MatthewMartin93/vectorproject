@@ -63,7 +63,7 @@ int main() {
                     cout << "error trap" << endl;
                     break;
                 }
-                const char* url = links[choice - 1].c_str(); // Corrected index
+                const char* url = links[choice - 1].c_str();
                 ShellExecute(0, "open", url, 0, 0, SW_SHOWNORMAL);
                 break;
             }
